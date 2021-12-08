@@ -7,7 +7,6 @@ package ui;
 
 public class MainMenu {
 
-	private ContractorMenu contractorMenu;
 	private CustomerMenu customerMenu;
 	private ProductMenu productMenu;
 	private OrderMenu orderMenu;
@@ -19,7 +18,6 @@ public class MainMenu {
 }
 	
 	public MainMenu() {
-		contractorMenu = new ContractorMenu();
 		customerMenu = new CustomerMenu();
 		productMenu = new ProductMenu();
 		orderMenu = new OrderMenu();
