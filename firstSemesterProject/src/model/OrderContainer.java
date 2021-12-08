@@ -23,7 +23,7 @@ public class OrderContainer {
 	}
 	
 	public Order getOrder(int id) {
-		Order foundOrder = new Order();
+		Order foundOrder = null; // was new Order()
 		for(Order element : orders) {
 			if(element.getId() == id) {
 				foundOrder = element;
@@ -33,8 +33,12 @@ public class OrderContainer {
 	}
 	
 	public boolean addOrder(Order order) {
-		orders.add(order);
-		return true;
+		if(order != null) {
+			orders.add(order);
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public boolean deleteOrder(int id) {

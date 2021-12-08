@@ -61,7 +61,9 @@ public class OrderMenu {
 		String deliveryDate = writeString("Enter delivery date: ");
 		String status = writeString("Enter status of the order: ");
 		Order createdOrder = orderController.addOrder(employee, customer, deliveryDate, status);
-		if(createdOrder != null) { 
+		if(createdOrder != 
+
+				) { 
 			System.out.println("Order created succesfully.");
 			boolean keepAdding = true;
 			while(keepAdding) {
@@ -105,6 +107,8 @@ public class OrderMenu {
 			} else {
 				System.out.println("The update was not succesful.");
 			}
+		} else {
+			System.out.println("The ID of order is not correct...");
 		}
 		return retVal;
 	}
@@ -192,7 +196,7 @@ public class OrderMenu {
 		if(orderController.getOrder(id) != null) { 
 			foundId = orderController.getOrder(id).getInfo(); 
 			
-			System.out.println("Found: \n" + foundId);
+			System.out.println("Found: " + foundId + "a");
 			retVal = true;
 		} else {
 			System.out.println("There is no order with that ID.");
