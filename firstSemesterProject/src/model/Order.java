@@ -6,6 +6,7 @@ import java.time.LocalDate;
 public class Order {
 
 	private static int id;
+	private int thisId;
 	private ArrayList<Product> products;
 	private Employee employee;
 	private Customer customer;
@@ -18,7 +19,7 @@ public class Order {
 	}
 	
 	public Order(Employee employee, Customer customer, String deliveryDate, String status) {
-		this.id += 1;
+		thisId = id++;
 		products = new ArrayList<>();
 		this.employee = employee;
 		this.customer = customer;
@@ -28,7 +29,7 @@ public class Order {
 	}
 	
 	public void getInfo() {
-		System.out.println("ID: " + id);
+		System.out.println("ID: " + this);
 		System.out.println("Products: ");
 		for(Product element : products) {
 			element.getInfo();
@@ -45,7 +46,7 @@ public class Order {
 	}
 	
 	public int getId() {
-		return id;
+		return thisId;
 	}
 	
 	public ArrayList<Product> getProducts() {

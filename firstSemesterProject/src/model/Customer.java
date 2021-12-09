@@ -5,6 +5,7 @@ import java.time.LocalDate;
 public class Customer {
 
 	private static int id;
+	private int thisId;
 	private String name;
 	private String phoneNumber;
 	private String zipCode;
@@ -12,7 +13,7 @@ public class Customer {
 	private LocalDate registrationDate;
 	
 	public Customer(String name, String phoneNumber, String zipCode, String adress) {
-		this.id += 1;
+		thisId = id++;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 		this.zipCode = zipCode;
@@ -22,7 +23,7 @@ public class Customer {
 	
 	// TODO getters & setters
 	public void getInfo() {
-		System.out.println("ID: " + id);
+		System.out.println("ID: " + thisId);
 		System.out.println("Name: " + name);
 		System.out.println("Phone number: " + phoneNumber);
 		System.out.println("Zipcode: " + zipCode);
@@ -31,6 +32,6 @@ public class Customer {
 	}
 	
 	public int getId() {
-		return id;
+		return thisId;
 	}
 }

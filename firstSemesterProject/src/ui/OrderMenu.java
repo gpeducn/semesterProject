@@ -83,7 +83,7 @@ public class OrderMenu {
 		if(orders.size() > 0) {
 			for(int i = 0; i < orders.size(); i++) {
 				System.out.println("Order [" + (i + 1) + "/" + orders.size() + "]:");
-				System.out.println(orders.get(i).getInfo()); 
+				orders.get(i).getInfo(); 
 			}
 		} else {
 			System.out.println("There are no orders.");
@@ -134,7 +134,7 @@ public class OrderMenu {
 	private Order findOrder() {	
 		int id = writeInt("Enter order ID: ");
 		Order order = orderController.getOrder(id);
-		System.out.println(order.getInfo());
+		order.getInfo();
 		return order;
 	}
 	
@@ -192,9 +192,9 @@ public class OrderMenu {
 		int foundId;
 		
 		if(orderController.getOrder(id) != null) { 
-			foundId = orderController.getOrder(id).getInfo(); 
+			foundId = orderController.getOrder(id).getId(); 
 			
-			System.out.println("Found: " + foundId + "a");
+			System.out.println("Found: " + foundId);
 			retVal = true;
 		} else {
 			System.out.println("There is no order with that ID.");

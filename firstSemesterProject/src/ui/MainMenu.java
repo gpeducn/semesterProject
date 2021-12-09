@@ -46,6 +46,7 @@ public class MainMenu {
 				case 5:
 					tryMe.newData();
 					tryMe.printData();
+					break;
 				default:
 					writeEnd();
 					running = false;
