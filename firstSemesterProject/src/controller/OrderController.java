@@ -61,10 +61,10 @@ public class OrderController {
 		return foundEmployee;
 	}
 	
-	public Customer findCustomer(String phoneNumber) {
+	public Customer findCustomer(int id) {
 		CustomerController customerController = new CustomerController();
 		
-		Customer foundCustomer = customerController.search(phoneNumber); // need to add findCustomer(String name) to CustomerController
+		Customer foundCustomer = customerController.search(id); // need to add findCustomer(String name) to CustomerController
 		return foundCustomer;
 	}
 	
