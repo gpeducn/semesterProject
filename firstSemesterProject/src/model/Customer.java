@@ -21,6 +21,10 @@ public class Customer {
 		registrationDate = LocalDate.now();
 	}
 	
+	public Customer() {
+		// TODO Auto-generated constructor stub
+	}
+
 	// TODO getters & setters
 	public void getInfo() {
 		System.out.println("ID: " + thisId);

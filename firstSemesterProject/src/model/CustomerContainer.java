@@ -23,7 +23,7 @@ public class CustomerContainer {
 	}
 	
 	public Customer getCustomer(int id) {
-		Customer foundCustomer = null;
+		Customer foundCustomer = new Customer();
 		for(Customer element : customers) {
 			if(element.getId() == id) {
 				foundCustomer = element;

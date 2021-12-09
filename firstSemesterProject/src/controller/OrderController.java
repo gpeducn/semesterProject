@@ -57,14 +57,14 @@ public class OrderController {
 	public Employee findEmployee(int id) {
 		EmployeeController employeeController = new EmployeeController();
 		
-		Employee foundEmployee = employeeController.findEmployee(id); // need to add findEmployee(String name) to EmployeeController
+		Employee foundEmployee = employeeController.findEmployee(id);
 		return foundEmployee;
 	}
 	
 	public Customer findCustomer(int id) {
 		CustomerController customerController = new CustomerController();
 		
-		Customer foundCustomer = customerController.search(id); // need to add findCustomer(String name) to CustomerController
+		Customer foundCustomer = customerController.findCustomer(id);
 		return foundCustomer;
 	}
 	

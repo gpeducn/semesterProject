@@ -65,13 +65,16 @@ public class OrderMenu {
 			System.out.println("Order created succesfully.");
 			boolean keepAdding = true;
 			while(keepAdding) {
-				String result = writeString("To cancel adding products to the order press N");
-				if(result.equals("N")) {
+				System.out.println("Add product");
+				Product productToAdd = productController.getProductById(writeInt("Enter ID of the product: "));
+				createdOrder.addProduct(productToAdd);
+				String result = writeString("If you want to add next product enter Y, otherwise enter N.");
+				if(result.equals("Y")) {
+					keepAdding = true;
+				} else {
 					keepAdding = false;
 					break;
 				}
-				Product product = findProduct();
-				orderController.addProductToOrder(createdOrder.getId(), product);
 			}
 		} else {
 			System.out.println("Order was not created cuccesfully.");

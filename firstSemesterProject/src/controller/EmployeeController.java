@@ -1,31 +1,25 @@
 package controller;
 
+import model.Customer;
+import model.CustomerContainer;
 import model.Employee;
 import model.EmployeeContainer;
 
 public class EmployeeController {
 	
-	public boolean addEmployee(int id, String name, String position, String password) {
-		Employee emp = new Employee(id, name, position, password);
-		return EmployeeContainer.addEmployee(emp);
+	public boolean addEmployee(String name, String position, String password) {
+		Employee employee = new Employee(name, position, password);
+		return EmployeeContainer.getInstance().addEmployee(employee);
 
 	}
 	
-	public boolean removeEmployee(String employee) {
-		return EmployeeContainer.removeEmployee(search(input));
+	public boolean deleteCustomer(int id) {
+		return CustomerContainer.getInstance().deleteCustomer(id);
 	}
-	
-	
-	public Employee searchEmployee(String employee) {
-		return EmployeeContainer.searchEmployee(input);
-
-	}
-	
-	//implement update, read
-	
 	
 	public Employee findEmployee(int id) {
-		Employee employee = null;
-		return employee;
+		return EmployeeContainer.getInstance().getEmployee(id);
 	}
+	
+	//TODO updateEmployee()
 }

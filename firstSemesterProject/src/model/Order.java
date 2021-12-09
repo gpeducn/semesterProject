@@ -29,13 +29,13 @@ public class Order {
 	}
 	
 	public void getInfo() {
-		System.out.println("ID: " + this);
+		System.out.println("ID: " + thisId);
 		System.out.println("Products: ");
 		for(Product element : products) {
 			element.getInfo();
 		}
-		System.out.println("Employee: " + employee);
-		System.out.println("Customer: " + customer);
+		System.out.println("Employee: " + employee.getId());
+		System.out.println("Customer: " + customer.getId());
 		System.out.println("Delivery date: " + deliveryDate);
 		System.out.println("Status: "  + status);
 		System.out.println("Order date: " + orderDate);
