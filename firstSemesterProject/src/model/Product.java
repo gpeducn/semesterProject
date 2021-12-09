@@ -32,6 +32,10 @@ public class Product {
 		this.isMultipleItem = isMultipleItem;
 	}
 
+	public void getInfo() {
+		System.out.println("Some info...");
+	}
+	
 	public String getProductName() {
 		return productName;
 	}

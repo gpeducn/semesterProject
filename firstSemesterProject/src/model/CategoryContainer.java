@@ -27,5 +27,9 @@ public class CategoryContainer {
 		}
 	}
 	
+	public ArrayList<Category> getAllCategories() {
+		return categories;
+	}
+	
 	
 }

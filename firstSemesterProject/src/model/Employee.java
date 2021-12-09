@@ -15,4 +15,13 @@ public class Employee {
 	}
 	
 	// TODO getters & setters
+	public void getInfo() {
+		System.out.println("ID: " + id);
+		System.out.println("Name: " + name);
+		System.out.println("Position: " + position);
+	}
+	
+	public int getId() {
+		return id;
+	}
 }

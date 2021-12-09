@@ -11,48 +11,55 @@ public class MainMenu {
 	private ProductMenu productMenu;
 	private OrderMenu orderMenu;
 	private EmployeeMenu employeeMenu;
+	private TryMe tryMe;
 
 	public static void main(String[] args) {
 		MainMenu mainMenu = new MainMenu();
 		mainMenu.start();
-}
+	}
 	
 	public MainMenu() {
 		customerMenu = new CustomerMenu();
 		productMenu = new ProductMenu();
 		orderMenu = new OrderMenu();
 		employeeMenu = new EmployeeMenu();
+		tryMe = new TryMe();
 	}
 
 	public void start() {
-		boolean exit = false;
-		while (!exit) {
+		boolean running = true;
+		while(running) {
 			int choice = writeMainMenu();
-			if (choice == 1) {
-				orderMenu.start();
-			} 
-			else if (choice == 2) {
-				//customerMenu.start();
-			} else if (choice == 3) {
-				//productMenu.start();
-			} else if (choice == 4) {
-				orderMenu.start();
-			} else if (choice == 5) {
-				//employeeMenu.start();
-			} else {
-				writeEnd();
-				exit = true;
+			switch(choice) {
+				case 1:
+//					customerMenu.start();
+					break;
+				case 2:
+//					productMenu.start();
+					break;
+				case 3:
+					orderMenu.start();
+					break;
+				case 4:
+//					employeeMenu.start();
+					break;
+				case 5:
+					tryMe.newData();
+					tryMe.printData();
+				default:
+					writeEnd();
+					running = false;
 			}
 		}
 	}
 	
 	private int writeMainMenu() {
 		TextOptions menu = new TextOptions("\n ***Main menu***", "Quit the program");
-		menu.addOption("Contractor menu");
 		menu.addOption("Customer menu");
 		menu.addOption("Product menu");
 		menu.addOption("Order menu");
 		menu.addOption("Employee menu");
+		menu.addOption("Generate data");
 		return menu.prompt();
 	}
 

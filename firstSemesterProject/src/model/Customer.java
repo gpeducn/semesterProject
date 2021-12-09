@@ -21,6 +21,15 @@ public class Customer {
 	}
 	
 	// TODO getters & setters
+	public void getInfo() {
+		System.out.println("ID: " + id);
+		System.out.println("Name: " + name);
+		System.out.println("Phone number: " + phoneNumber);
+		System.out.println("Zipcode: " + zipCode);
+		System.out.println("Adress: " + adress);
+		System.out.println("Registration date: " + registrationDate);
+	}
+	
 	public int getId() {
 		return id;
 	}

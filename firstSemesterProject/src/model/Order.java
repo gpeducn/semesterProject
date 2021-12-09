@@ -27,8 +27,17 @@ public class Order {
 		orderDate = LocalDate.now();
 	}
 	
-	public int getInfo() {
-		return id; // have to change this shit
+	public void getInfo() {
+		System.out.println("ID: " + id);
+		System.out.println("Products: ");
+		for(Product element : products) {
+			element.getInfo();
+		}
+		System.out.println("Employee: " + employee);
+		System.out.println("Customer: " + customer);
+		System.out.println("Delivery date: " + deliveryDate);
+		System.out.println("Status: "  + status);
+		System.out.println("Order date: " + orderDate);
 	}
 	
 	public void addProduct(Product product) {	

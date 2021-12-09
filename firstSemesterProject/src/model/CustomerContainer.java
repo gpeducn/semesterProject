@@ -32,20 +32,19 @@ public class CustomerContainer {
 		return foundCustomer;
 	}
 	
-	public  boolean removeCustomer(Customer customer) {
-		return customers.remove(customer);
+	public boolean addCustomer(Customer customer) {
+		if(customer != null) {
+			customers.add(customer);
+			return true;
+		} else {
+			return false;
+		}
 	}
-	//implement update and read !!!!!!!!!!!!!!!!!!!!!
 	
-//	public Customer searchCustomer(String inputVal) {
-//		Customer returnCustomer = null;
-//		for (Customer val : customers) {
-//			if(val.getPhoneNumber() == inputVal) {
-//				returnCustomer = customer;
-//			}
-//		
-//		}
-//		return returnCustomer;
-//	}
+	public boolean deleteCustomer(int id) {
+		return customers.removeIf(customer -> customer.getId() == id);
+	}
+	
+	
 }
 
