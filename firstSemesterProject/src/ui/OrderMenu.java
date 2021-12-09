@@ -61,9 +61,7 @@ public class OrderMenu {
 		String deliveryDate = writeString("Enter delivery date: ");
 		String status = writeString("Enter status of the order: ");
 		Order createdOrder = orderController.addOrder(employee, customer, deliveryDate, status);
-		if(createdOrder != 
-
-				) { 
+		if(createdOrder != null) { 
 			System.out.println("Order created succesfully.");
 			boolean keepAdding = true;
 			while(keepAdding) {

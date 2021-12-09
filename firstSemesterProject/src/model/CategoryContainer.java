@@ -18,5 +18,14 @@ public class CategoryContainer {
 		return instance;
 	}
 	
+	public boolean addCategory(Category category) {
+		if(category != null) {
+			categories.add(category);
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	
 }

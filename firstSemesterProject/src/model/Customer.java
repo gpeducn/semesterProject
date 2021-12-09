@@ -21,4 +21,7 @@ public class Customer {
 	}
 	
 	// TODO getters & setters
+	public int getId() {
+		return id;
+	}
 }
