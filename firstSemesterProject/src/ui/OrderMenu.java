@@ -196,8 +196,6 @@ public class OrderMenu {
 		
 		if(orderController.getOrder(id) != null) { 
 			foundId = orderController.getOrder(id).getId(); 
-			
-			System.out.println("Found: " + foundId);
 			retVal = true;
 		} else {
 			System.out.println("There is no order with that ID.");
