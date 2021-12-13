@@ -1,5 +1,5 @@
 package model;
 
-public class PrivateCustomer {
+public class PrivateCustomer extends Customer {
 
 }

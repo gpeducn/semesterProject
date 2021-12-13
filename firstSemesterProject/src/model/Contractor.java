@@ -1,6 +1,6 @@
 package model;
 
-public class Contractor {
+public class Contractor extends Customer {
 	
 	private int discount;
 	
