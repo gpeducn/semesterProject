@@ -1,8 +1,8 @@
 package ui;
 
 /**
+ * MainMenu - class that creates main menu.
  * @author brynjar
- *
  */
 
 public class MainMenu {
@@ -12,12 +12,19 @@ public class MainMenu {
 	private OrderMenu orderMenu;
 	private EmployeeMenu employeeMenu;
 	private TryMe tryMe;
-
+	
+	/**
+	 * Start the program.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		MainMenu mainMenu = new MainMenu();
 		mainMenu.start();
 	}
 	
+	/**
+	 * Constructor of objects of MainMenu.
+	 */
 	public MainMenu() {
 		customerMenu = new CustomerMenu();
 		productMenu = new ProductMenu();
@@ -26,6 +33,9 @@ public class MainMenu {
 		tryMe = new TryMe();
 	}
 
+	/**
+	 * Start the main menu.
+	 */
 	public void start() {
 		boolean running = true;
 		while(running) {
@@ -54,6 +64,10 @@ public class MainMenu {
 		}
 	}
 	
+	/**
+	 * Print main menu.
+	 * @return what user want to do
+	 */
 	private int writeMainMenu() {
 		TextOptions menu = new TextOptions("\n ***Main menu***", "Quit the program");
 		menu.addOption("Customer menu");
@@ -61,10 +75,14 @@ public class MainMenu {
 		menu.addOption("Order menu");
 		menu.addOption("Employee menu");
 		menu.addOption("Generate data");
+		
 		return menu.prompt();
 	}
 
+	/**
+	 * Print goodbye message.
+	 */
 	private void writeEnd() {
-		System.out.println(" Goodbye ");
+		System.out.println("Thank you, goodbye.");
 	}
 }

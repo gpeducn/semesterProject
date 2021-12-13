@@ -11,16 +11,27 @@ import model.Product;
 
 import java.util.ArrayList;
 
+/**
+ * OrderMenu - class that creates order menu and
+ * let user take some actions related to order.
+ * @author Gabriel Pêdlowski
+ */
 public class OrderMenu {
 	
 	private OrderController orderController;
 	private ProductController productController;
 	
+	/**
+	 * Constructor for objects of OrderMenu.
+	 */
 	public OrderMenu() {
 		orderController = new OrderController();
 		productController = new ProductController();
 	}
 	
+	/**
+	 * Start the order menu.
+	 */
 	public void start() {
 		boolean running = true;
         while(running) {
@@ -44,6 +55,10 @@ public class OrderMenu {
         }
 	}
 	
+	/**
+	 * Print order menu.
+	 * @return what user wants to do with order
+	 */
 	private int writeOrderMenu() {
 		TextOptions menu = new TextOptions("\n ***** Order Menu *****", "Back");
 		menu.addOption("Create order");
@@ -51,10 +66,12 @@ public class OrderMenu {
 		menu.addOption("Update order");
 		menu.addOption("Delete order");
 		
-		int choice = menu.prompt();
-		return choice;
+		return menu.prompt();
 	}
 	
+	/**
+	 * Create order.
+	 */
 	private void createOrder() {
 		Employee employee = findEmployee();
 		Customer customer = findCustomer();
@@ -81,6 +98,9 @@ public class OrderMenu {
 		}
 	}
 	
+	/**
+	 * Print all existing orders.
+	 */
 	private void printAllOrders() {
 		ArrayList<Order> orders = orderController.getAllOrders(); 
 		if(orders.size() > 0) {
@@ -93,11 +113,19 @@ public class OrderMenu {
 		}
 	}
 	
+	/**
+	 * Update order.
+	 */
 	private void updateOrder() {
 		int id = findOrder().getId();
 		updateOrderById(id);
 	}
 	
+	/**
+	 * Update order with given ID.
+	 * @param id
+	 * @return true if order updated successfully
+	 */
 	private boolean updateOrderById(int id) {
 		boolean retVal = false;
 		
@@ -114,11 +142,19 @@ public class OrderMenu {
 		return retVal;
 	}
 	
+	/**
+	 * Delete order.
+	 */
 	private void deleteOrder() {
 		int id = findOrder().getId();
 		deleteOrderById(id);
 	}
 	
+	/**
+	 * Delete order with given ID.
+	 * @param id
+	 * @return true if order deleted successfully
+	 */
 	private boolean deleteOrderById(int id) {
 		if(checkIdValidity(id)) {
 			if(confirm()) {
@@ -134,6 +170,10 @@ public class OrderMenu {
 		return false;
 	}
 	
+	/**
+	 * Take order ID from the user and find the order.
+	 * @return order with the given id
+	 */
 	private Order findOrder() {	
 		int id = writeInt("Enter order ID: ");
 		Order order = orderController.getOrder(id);
@@ -141,6 +181,10 @@ public class OrderMenu {
 		return order;
 	}
 	
+	/**
+	 * Check if user is sure about the change e.g delete order.
+	 * @return true if user choose "Yes"
+	 */
 	private boolean confirm() {
 		boolean retVal = false;
 		
@@ -151,21 +195,32 @@ public class OrderMenu {
 		int choice = menu.prompt();
 		
 		switch(choice) {
-		case 1:
-			retVal = true;
-			break;
-		default:
-			retVal = false;
+			case 1:
+				retVal = true;
+				break;
+			default:
+				
 		}
 		return retVal;
 	}
 	
+	/**
+	 * Take new order details from user and update order with them.
+	 * @param id
+	 * @return true if order updated successfully
+	 */
 	private boolean updateFields(int id) {
 		boolean retVal = false;
 		Employee employee = findEmployee();
 		Customer customer = findCustomer();
 		String deliveryDate = writeString("Enter delivery date: ");
+		if(deliveryDate.equals("")) {
+			deliveryDate = orderController.getOrder(id).getDeliveryDate();
+		}
 		String status = writeString("Enter status of the order: ");
+		if(status.equals("")) {
+			status = orderController.getOrder(id).getStatus();
+		}
 		
 		if(orderController.updateOrder(id, employee, customer, deliveryDate, status)) { 
 			retVal = true;
@@ -173,16 +228,28 @@ public class OrderMenu {
 		return retVal;
 	}
 	
+	/**
+	 * Take employee ID from user and find the employee.
+	 * @return employee with given id
+	 */
 	private Employee findEmployee() {
 		Employee employee = orderController.findEmployee(writeInt("Enter employee ID: ")); 
 		return employee;
 	}
 	
+	/**
+	 * Take customer ID from user and find the customer.
+	 * @return customer with given id
+	 */
 	private Customer findCustomer() {
 		Customer customer = orderController.findCustomer(writeInt("Enter customer ID: ")); 
 		return customer;
 	}
 	
+	/**
+	 * Take product ID from user and find the product.
+	 * @return product with given id
+	 */
 	private Product findProduct() {
 		String productId = writeString("Enter product ID: ");
 		Product product = productController.getProductById(Integer.valueOf(productId));
@@ -190,12 +257,15 @@ public class OrderMenu {
 		return product;
 	}
 	
+	/**
+	 * Check if order with given id exist.
+	 * @param id
+	 * @return true if there is an order with given id
+	 */
 	private boolean checkIdValidity(int id) {
 		boolean retVal = false;
-		int foundId;
 		
 		if(orderController.getOrder(id) != null) { 
-			foundId = orderController.getOrder(id).getId(); 
 			retVal = true;
 		} else {
 			System.out.println("There is no order with that ID.");
@@ -203,11 +273,21 @@ public class OrderMenu {
 		return retVal;
 	}
 	
+	/**
+	 * Write string input field.
+	 * @param text
+	 * @return input line
+	 */
 	private String writeString(String text) {
 		String output = TextInput.inputString(text);
 		return output;
 	}
 	
+	/**
+	 * Write int input field.
+	 * @param number
+	 * @return input line
+	 */
 	private int writeInt(String number) {
 		int output = TextInput.inputNumber(number);
 		return output;
