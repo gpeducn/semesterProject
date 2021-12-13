@@ -42,16 +42,16 @@ public class MainMenu {
 			int choice = writeMainMenu();
 			switch(choice) {
 				case 1:
-//					customerMenu.start();
+					customerMenu.start();
 					break;
 				case 2:
-//					productMenu.start();
+					productMenu.start();
 					break;
 				case 3:
 					orderMenu.start();
 					break;
 				case 4:
-//					employeeMenu.start();
+					employeeMenu.start();
 					break;
 				case 5:
 					tryMe.newData();
