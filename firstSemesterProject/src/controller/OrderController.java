@@ -57,7 +57,7 @@ public class OrderController {
 	public Employee findEmployee(int id) {
 		EmployeeController employeeController = new EmployeeController();
 		
-		Employee foundEmployee = employeeController.findEmployee(id);
+		Employee foundEmployee = employeeController.getEmployee(id);
 		return foundEmployee;
 	}
 	

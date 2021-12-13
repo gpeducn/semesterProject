@@ -8,7 +8,7 @@ public class Customer {
 	private int thisId;
 	private String name;
 	private String phoneNumber;
-	private String zipCode;
+	private String zipcode;
 	private String adress;
 	private LocalDate registrationDate;
 	
@@ -36,12 +36,12 @@ public class Customer {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public String getZipCode() {
-		return zipCode;
+	public String getZipcode() {
+		return zipcode;
 	}
 
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
 	}
 
 	public String getAdress() {
@@ -64,7 +64,7 @@ public class Customer {
 		thisId = id++;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
-		this.zipCode = zipCode;
+		this.zipcode = zipcode;
 		this.adress = adress;
 		registrationDate = LocalDate.now();
 	}
@@ -77,7 +77,7 @@ public class Customer {
 		System.out.println("ID: " + thisId);
 		System.out.println("Name: " + name);
 		System.out.println("Phone number: " + phoneNumber);
-		System.out.println("Zipcode: " + zipCode);
+		System.out.println("Zipcode: " + zipcode);
 		System.out.println("Adress: " + adress);
 		System.out.println("Registration date: " + registrationDate);
 	}
@@ -85,4 +85,6 @@ public class Customer {
 	public int getId() {
 		return thisId;
 	}
+
+
 }
