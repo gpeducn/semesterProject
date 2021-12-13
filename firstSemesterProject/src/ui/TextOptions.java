@@ -51,7 +51,7 @@ public class TextOptions {
             lowerBound = 1;
         }
         while (choice < lowerBound || choice >= size) {
-           choice = TextInput.inputNumber("Input number"); 
+           choice = TextInput.inputNumber("Input number: "); 
         }
         return choice;
     }

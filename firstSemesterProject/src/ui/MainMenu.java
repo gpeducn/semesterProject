@@ -69,7 +69,7 @@ public class MainMenu {
 	 * @return what user want to do
 	 */
 	private int writeMainMenu() {
-		TextOptions menu = new TextOptions("\n ***Main menu***", "Quit the program");
+		TextOptions menu = new TextOptions("\n ***** Main Menu *****", "Quit the program");
 		menu.addOption("Customer menu");
 		menu.addOption("Product menu");
 		menu.addOption("Order menu");

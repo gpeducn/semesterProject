@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 import controller.CustomerController;
 import model.Customer;
-import model.Employee;
-import model.Order;
 
 public class CustomerMenu {
 	
@@ -183,9 +181,9 @@ public class CustomerMenu {
 	private boolean updateFields(int id) {
 		boolean retVal = false;
 		String name = writeString("Enter customer name: ");
-		String phoneNumber = writeString("Enter customer position: ");
-		String zipcode = writeString("Enter customer password: ");
-		String adress = writeString("Enter customer adress");
+		String phoneNumber = writeString("Enter customer phone number: ");
+		String zipcode = writeString("Enter customer zipcode: ");
+		String adress = writeString("Enter customer adress: ");
 		if(name.equals("")) {
 			name = customerController.findCustomer(id).getName();
 		}

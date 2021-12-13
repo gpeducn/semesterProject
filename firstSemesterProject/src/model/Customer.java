@@ -60,7 +60,7 @@ public class Customer {
 		this.registrationDate = registrationDate;
 	}
 
-	public Customer(String name, String phoneNumber, String zipCode, String adress) {
+	public Customer(String name, String phoneNumber, String zipcode, String adress) {
 		thisId = id++;
 		this.name = name;
 		this.phoneNumber = phoneNumber;

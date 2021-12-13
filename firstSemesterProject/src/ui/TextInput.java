@@ -38,7 +38,7 @@ public class TextInput {
     }
     
     private static void printQuesiton(String question) {
-        System.out.print(" " + question + ": ");
+        System.out.print(" " + question);
     }
 
 }
