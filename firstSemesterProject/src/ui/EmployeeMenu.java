@@ -3,9 +3,7 @@ package ui;
 import java.util.ArrayList;
 
 import controller.EmployeeController;
-import model.Customer;
 import model.Employee;
-import model.Order;
 
 public class EmployeeMenu {
 	

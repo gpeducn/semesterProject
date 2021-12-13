@@ -2,8 +2,6 @@ package controller;
 
 import java.util.ArrayList;
 
-import model.Customer;
-import model.CustomerContainer;
 import model.Employee;
 import model.EmployeeContainer;
 

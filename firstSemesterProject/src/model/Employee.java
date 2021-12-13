@@ -15,47 +15,7 @@ public class Employee {
 		this.password = password;
 	}
 	
-	
-	public int getThisId() {
-		return thisId;
-	}
-
-
-	public void setThisId(int thisId) {
-		this.thisId = thisId;
-	}
-
-
-	public String getName() {
-		return name;
-	}
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public String getPosition() {
-		return position;
-	}
-
-
-	public void setPosition(String position) {
-		this.position = position;
-	}
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-
+	// TODO getters & setters
 	public void getInfo() {
 		System.out.println("ID: " + thisId);
 		System.out.println("Name: " + name);
@@ -64,5 +24,29 @@ public class Employee {
 	
 	public int getId() {
 		return thisId;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setPosition(String position) {
+		this.position = position;
+	}
+	
+	public String getPosition() {
+		return position;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public String getPassword() {
+		return password;
 	}
 }
