@@ -1,35 +1,34 @@
 package model;
 
 public class Product {
+	private String productName;
+	private static int id;
 	private int barcode;
 	private String location;
 	private double price;
-	private double purchassePrice;
+	private double purchasePrice;
 	private int quantity;
 	private int discount;
 	private int minimumStock;
 	private int maximumStock;
-	private boolean isMultipleItem; 
 
 	public Product(String productName) {
 		super();
 		this.productName = productName;
 	}
 	
-	public Product(String productName, int barcode, String location, double price,
-			double purchassePrice, int quantity, int discount, int minimumStock, int maximumStock,
-			boolean isMultipleItem) {
+	public Product(String productName, String location, double price,
+			double purchasePrice, int quantity, int discount, int minimumStock, int maximumStock) {
 		super();
 		this.productName = productName;
-		this.barcode = barcode;
+		barcode = id++;
 		this.location = location;
 		this.price = price;
-		this.purchassePrice = purchassePrice;
+		this.purchasePrice = purchasePrice;
 		this.quantity = quantity;
 		this.discount = discount;
 		this.minimumStock = minimumStock;
 		this.maximumStock = maximumStock;
-		this.isMultipleItem = isMultipleItem;
 	}
 
 	public void getInfo() {
@@ -45,9 +44,6 @@ public class Product {
 	public int getBarcode() {
 		return barcode;
 	}
-	public void setBarcode(int barcode) {
-		this.barcode = barcode;
-	}
 	public String getLocation() {
 		return location;
 	}
@@ -60,11 +56,11 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public double getPurchassePrice() {
-		return purchassePrice;
+	public double getPurchasePrice() {
+		return purchasePrice;
 	}
-	public void setPurchassePrice(double purchassePrice) {
-		this.purchassePrice = purchassePrice;
+	public void setPurchasePrice(double purchasePrice) {
+		this.purchasePrice = purchasePrice;
 	}
 	public int getQuantity() {
 		return quantity;
@@ -90,11 +86,5 @@ public class Product {
 	public void setMaximumStock(int maximumStock) {
 		this.maximumStock = maximumStock;
 	}
-	public boolean isMultipleItem() {
-		return isMultipleItem;
-	}
-	public void setMultipleItem(boolean isMultipleItem) {
-		this.isMultipleItem = isMultipleItem;
-	}
-	private String productName;
+	
 }

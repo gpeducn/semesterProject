@@ -2,10 +2,8 @@ package ui;
 
 import controller.OrderController;
 import controller.ProductController;
-import model.OrderContainer;
 import model.Order;
 import model.Employee;
-import model.Contractor;
 import model.Customer;
 import model.Product;
 
@@ -83,7 +81,7 @@ public class OrderMenu {
 			boolean keepAdding = true;
 			while(keepAdding) {
 				System.out.println("Add product");
-				Product productToAdd = productController.getProductById(writeInt("Enter ID of the product: "));
+				Product productToAdd = productController.getProduct(writeInt("Enter ID of the product: "));
 				createdOrder.addProduct(productToAdd);
 				String result = writeString("If you want to add next product enter Y, otherwise enter N.");
 				if(result.equals("Y")) {
@@ -244,17 +242,6 @@ public class OrderMenu {
 	private Customer findCustomer() {
 		Customer customer = orderController.findCustomer(writeInt("Enter customer ID: ")); 
 		return customer;
-	}
-	
-	/**
-	 * Take product ID from user and find the product.
-	 * @return product with given id
-	 */
-	private Product findProduct() {
-		String productId = writeString("Enter product ID: ");
-		Product product = productController.getProductById(Integer.valueOf(productId));
-		
-		return product;
 	}
 	
 	/**
