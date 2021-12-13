@@ -83,11 +83,15 @@ public class CustomerMenu {
 	}
 	
 	/**
-	 * Update employee.
+	 * Update customer.
 	 */
 	private void updateCustomer() {
-		int id = findCustomer().getId();
-		updateCustomerById(id);
+		try {
+			int id = findCustomer().getThisId();
+			updateCustomerById(id);
+		} catch(NullPointerException e) {
+			
+		}
 	}
 	
 	/**
@@ -115,7 +119,7 @@ public class CustomerMenu {
 	 * Delete customer.
 	 */
 	private void deleteCustomer() {
-		int id = findCustomer().getId();
+		int id = findCustomer().getThisId();
 		deleteCustomerById(id);
 	}
 	
@@ -145,8 +149,13 @@ public class CustomerMenu {
 	 */
 	private Customer findCustomer() {	
 		int id = writeInt("Enter customer ID: ");
-		Customer customer = customerController.findCustomer(id);
-		customer.getInfo();
+		Customer customer = null;
+		if(checkIdValidity(id)) {
+			customer = customerController.findCustomer(id);
+			customer.getInfo();
+		} else {
+			updateCustomer();
+		}
 		return customer;
 	}
 	
@@ -211,10 +220,10 @@ public class CustomerMenu {
 	private boolean checkIdValidity(int id) {
 		boolean retVal = false;
 		
-		if(customerController.findCustomer(id) != null) { 
+		if(customerController.findCustomer(id).getThisId() == id) { 
 			retVal = true;
 		} else {
-			System.out.println("There is no customer with that ID.");
+			System.out.println("There is no customer with that ID, try again!");
 		}
 		return retVal;
 	}

@@ -34,8 +34,8 @@ public class Order {
 		for(Product element : products) {
 			element.getInfo();
 		}
-		System.out.println("Employee: " + employee.getId());
-		System.out.println("Customer: " + customer.getId());
+		System.out.println("Employee: " + employee.getThisId());
+		System.out.println("Customer: " + customer.getThisId());
 		System.out.println("Delivery date: " + deliveryDate);
 		System.out.println("Status: "  + status);
 		System.out.println("Order date: " + orderDate);

@@ -2,10 +2,12 @@ package controller;
 
 import model.Customer;
 import model.CustomerContainer;
+//import model.Contractor;
+//import model.PrivateCustomer;
+
 import java.util.ArrayList;
 
 public class CustomerController {
-	
 	
 	public boolean addCustomer(String name, String phoneNumber, String zipcode, String address) {
 		Customer customer = new Customer(name,phoneNumber,zipcode,address);
@@ -29,7 +31,7 @@ public class CustomerController {
 		ArrayList<Customer> customers = getAllCustomers();
 		
 		for(Customer element : customers) {
-			if(element.getId() == id) {
+			if(element.getThisId() == id) {
 				element.setName(name);
 				element.setPhoneNumber(phoneNumber);
 				element.setZipcode(zipcode);

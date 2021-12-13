@@ -25,7 +25,7 @@ public class CustomerContainer {
 	public Customer getCustomer(int id) {
 		Customer foundCustomer = new Customer();
 		for(Customer element : customers) {
-			if(element.getId() == id) {
+			if(element.getThisId() == id) {
 				foundCustomer = element;
 			}
 		}
@@ -42,7 +42,7 @@ public class CustomerContainer {
 	}
 	
 	public boolean deleteCustomer(int id) {
-		return customers.removeIf(customer -> customer.getId() == id);
+		return customers.removeIf(customer -> customer.getThisId() == id);
 	}
 	
 	

@@ -25,7 +25,7 @@ public class EmployeeContainer {
 	public Employee getEmployee(int id) {
 		Employee foundEmployee = null;
 		for(Employee element : employees) {
-			if(element.getId() == id) {
+			if(element.getThisId() == id) {
 				foundEmployee = element;
 			}
 		}
@@ -42,7 +42,7 @@ public class EmployeeContainer {
 	}
 	
 	public boolean deleteEmployee(int id) {
-		return employees.removeIf(employee -> employee.getId() == id);
+		return employees.removeIf(employee -> employee.getThisId() == id);
 	}
 	
 }

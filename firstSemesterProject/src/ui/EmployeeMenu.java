@@ -85,7 +85,7 @@ public class EmployeeMenu {
 	 * Update employee.
 	 */
 	private void updateEmployee() {
-		int id = findEmployee().getId();
+		int id = findEmployee().getThisId();
 		updateEmployeeById(id);
 	}
 	
@@ -114,7 +114,7 @@ public class EmployeeMenu {
 	 * Delete employee.
 	 */
 	private void deleteEmployee() {
-		int id = findEmployee().getId();
+		int id = findEmployee().getThisId();
 		deleteEmployeeById(id);
 	}
 	

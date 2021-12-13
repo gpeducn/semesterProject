@@ -30,7 +30,7 @@ public class EmployeeController {
 		ArrayList<Employee> employees = getAllEmployees();
 		
 		for(Employee element : employees) {
-			if(element.getId() == id) {
+			if(element.getThisId() == id) {
 				element.setName(name);
 				element.setPosition(position);
 				element.setPassword(password);

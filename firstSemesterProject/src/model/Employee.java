@@ -15,7 +15,7 @@ public class Employee {
 		this.password = password;
 	}
 	
-	public int getId() {
+	public int getThisId() {
 		return thisId;
 	}
 	

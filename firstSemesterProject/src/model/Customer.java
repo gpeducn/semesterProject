@@ -12,12 +12,21 @@ public class Customer {
 	private String adress;
 	private LocalDate registrationDate;
 	
+	public Customer(String name, String phoneNumber, String zipcode, String adress) {
+		thisId = id++;
+		this.name = name;
+		this.phoneNumber = phoneNumber;
+		this.zipcode = zipcode;
+		this.adress = adress;
+		registrationDate = LocalDate.now();
+	}
+	
+	public Customer() {
+		
+	}	
+	
 	public int getThisId() {
 		return thisId;
-	}
-
-	public void setThisId(int thisId) {
-		this.thisId = thisId;
 	}
 
 	public String getName() {
@@ -60,19 +69,6 @@ public class Customer {
 		this.registrationDate = registrationDate;
 	}
 
-	public Customer(String name, String phoneNumber, String zipcode, String adress) {
-		thisId = id++;
-		this.name = name;
-		this.phoneNumber = phoneNumber;
-		this.zipcode = zipcode;
-		this.adress = adress;
-		registrationDate = LocalDate.now();
-	}
-	
-	public Customer() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public void getInfo() {
 		System.out.println("ID: " + thisId);
 		System.out.println("Name: " + name);
@@ -81,10 +77,5 @@ public class Customer {
 		System.out.println("Adress: " + adress);
 		System.out.println("Registration date: " + registrationDate);
 	}
-	
-	public int getId() {
-		return thisId;
-	}
-
 
 }
