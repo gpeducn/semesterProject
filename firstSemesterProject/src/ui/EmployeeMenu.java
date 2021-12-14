@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import controller.EmployeeController;
 import model.Employee;
 
+/**
+ * EmployeeMenu - class that creates employee menu and
+ * let user take some actions related to employee.
+ * @author Gabriel Pêdlowski
+ */
 public class EmployeeMenu {
 	
 	private EmployeeController employeeController;

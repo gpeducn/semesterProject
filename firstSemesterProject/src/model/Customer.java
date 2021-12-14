@@ -76,6 +76,7 @@ public abstract class Customer {
 		System.out.println("Zipcode: " + zipcode);
 		System.out.println("Adress: " + adress);
 		System.out.println("Registration date: " + registrationDate);
+		System.out.println("");
 	}
 
 }

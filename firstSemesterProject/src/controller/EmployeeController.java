@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import model.Employee;
 import model.EmployeeContainer;
 
+/**
+ * EmployeeController - class 
+ * @author Gabriel Pêdlowski
+ */
 public class EmployeeController {
 	
 	public boolean addEmployee(String name, String position, String password) {

@@ -8,33 +8,69 @@ import model.Product;
 
 import java.util.ArrayList;
 
+/**
+ * OrderController - class 
+ * @author Gabriel Pêdlowski
+ */
 public class OrderController {
 	
 	public OrderController() {
 		
 	}
 	
+	/**
+	 * Add product to order.
+	 * @param orderId
+	 * @param product
+	 * @return true
+	 */
 	public boolean addProductToOrder(int orderId, Product product) {
 		Order foundOrder = getOrder(orderId);
 		foundOrder.addProduct(product);
 		return true;
 	}
 	
+	/**
+	 * Add order to the list of orders.
+	 * @param employee
+	 * @param customer
+	 * @param deliveryDate
+	 * @param status
+	 * @return order 
+	 */
 	public Order addOrder(Employee employee, Customer customer, String deliveryDate, String status) {
 		Order newOrder = new Order(employee, customer, deliveryDate, status);
 		OrderContainer.getInstance().addOrder(newOrder);
 		return newOrder;
 	}
 	
+	/**
+	 * Get all existing orders.
+	 * @return list of orders
+	 */
 	public ArrayList<Order> getAllOrders() {
 		ArrayList<Order> orders = OrderContainer.getInstance().getAllOrders();
 		return orders;
 	}
 	
+	/**
+	 * Delete order.
+	 * @param id
+	 * @return true if order deleted successfully
+	 */
 	public boolean deleteOrder(int id) {
 		return OrderContainer.getInstance().deleteOrder(id);
 	}
 	
+	/**
+	 * Update order.
+	 * @param id
+	 * @param employee
+	 * @param customer
+	 * @param deliveryDate
+	 * @param status
+	 * @return true if order updated successfully
+	 */
 	public boolean updateOrder(int id, Employee employee, Customer customer, String deliveryDate, String status) {
 		boolean retVal = false;
 		ArrayList<Order> orders = getAllOrders();
@@ -54,6 +90,11 @@ public class OrderController {
 		return retVal;
 	}
 	
+	/**
+	 * Find employee with given ID.
+	 * @param id
+	 * @return employee with given id
+	 */
 	public Employee findEmployee(int id) {
 		EmployeeController employeeController = new EmployeeController();
 		
@@ -61,6 +102,11 @@ public class OrderController {
 		return foundEmployee;
 	}
 	
+	/**
+	 * Find customer with given ID.
+	 * @param id
+	 * @return
+	 */
 	public Customer findCustomer(int id) {
 		CustomerController customerController = new CustomerController();
 		
