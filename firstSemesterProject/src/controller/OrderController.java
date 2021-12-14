@@ -105,7 +105,7 @@ public class OrderController {
 	/**
 	 * Find customer with given ID.
 	 * @param id
-	 * @return
+	 * @return product with given id 
 	 */
 	public Customer findCustomer(int id) {
 		CustomerController customerController = new CustomerController();
@@ -114,6 +114,11 @@ public class OrderController {
 		return foundCustomer;
 	}
 	
+	/**
+	 * Get order with given ID.
+	 * @param id
+	 * @return order with given id
+	 */
 	public Order getOrder(int id) {
 		Order foundOrder = OrderContainer.getInstance().getOrder(id);
 		return foundOrder;
