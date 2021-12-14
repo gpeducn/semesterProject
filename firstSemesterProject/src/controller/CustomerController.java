@@ -1,16 +1,23 @@
 package controller;
 
+import model.Contractor;
 import model.Customer;
 import model.CustomerContainer;
 //import model.Contractor;
 //import model.PrivateCustomer;
+import model.PrivateCustomer;
 
 import java.util.ArrayList;
 
 public class CustomerController {
 	
-	public boolean addCustomer(String name, String phoneNumber, String zipcode, String address) {
-		Customer customer = new Customer(name,phoneNumber,zipcode,address);
+	public boolean addCustomer(String name, String phoneNumber, String zipcode, String address,int discount) {
+		Customer customer;
+		if(discount == - 1) {
+		customer = new PrivateCustomer(name,phoneNumber,zipcode,address);}
+		else {
+			customer = new Contractor(name,phoneNumber,zipcode,address,discount);
+		}
 		return CustomerContainer.getInstance().addCustomer(customer);
 	}
 	

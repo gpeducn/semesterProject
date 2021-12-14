@@ -2,7 +2,7 @@ package model;
 
 import java.time.LocalDate;
 
-public class Customer {
+public abstract class Customer {
 
 	private static int id;
 	private int thisId;

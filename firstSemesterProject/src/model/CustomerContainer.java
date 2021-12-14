@@ -23,7 +23,7 @@ public class CustomerContainer {
 	}
 	
 	public Customer getCustomer(int id) {
-		Customer foundCustomer = new Customer();
+		Customer foundCustomer = new PrivateCustomer();
 		for(Customer element : customers) {
 			if(element.getThisId() == id) {
 				foundCustomer = element;

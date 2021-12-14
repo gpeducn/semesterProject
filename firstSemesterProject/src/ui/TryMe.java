@@ -32,8 +32,8 @@ public class TryMe {
 		CategoryContainer.getInstance().addCategory(category1);
 		CategoryContainer.getInstance().addCategory(category2);
 		
-		customer1 = new Customer("Big Boss", "123456789", "59-100", "Aalborg 12");
-		customer2 = new Customer("Small Boss", "918273912", "50192", "Copenhagen 29A");
+		customer1 = new PrivateCustomer("Big Boss", "123456789", "59-100", "Aalborg 12");
+		customer2 = new Contractor("Small Boss", "918273912", "50192", "Copenhagen 29A", 20);
 		
 		CustomerContainer.getInstance().addCustomer(customer1);
 		CustomerContainer.getInstance().addCustomer(customer2);

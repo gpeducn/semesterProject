@@ -25,15 +25,18 @@ public class CustomerMenu {
 			int choice = writeCustomerMenu();
 			switch(choice) {
 				case 1:
-					createCustomer();
+					createPrivateCustomer();
 					break;
 				case 2:
-					printAllCustomers();
+					createContractor();
 					break;
 				case 3:
-					updateCustomer();
+					printAllCustomers();
 					break;
 				case 4:
+					updateCustomer();
+					break;
+				case 5:
 					deleteCustomer();
 					break;
 				default:
@@ -48,7 +51,8 @@ public class CustomerMenu {
 	 */
 	public int writeCustomerMenu() {
 		TextOptions menu = new TextOptions("\n ***** Customer Menu *****", "Back");
-		menu.addOption("Create customer");
+		menu.addOption("Create private customer");
+		menu.addOption("Create contractor");
 		menu.addOption("Show all customers");
 		menu.addOption("Update customer");
 		menu.addOption("Delete customer");
@@ -57,15 +61,26 @@ public class CustomerMenu {
 	}
 	
 	/**
-	 * Create customer.
+	 * Create private customer.
 	 */
-	public void createCustomer() {
+	public void createPrivateCustomer() {
 		String name = writeString("Enter customer name: ");
 		String phoneNumber = writeString("Enter customer phone number: ");
 		String zipcode = writeString("Enter customer zipcode: ");
 		String adress = writeString("Enter customer adress: ");
-		customerController.addCustomer(name, phoneNumber, zipcode, adress);
+		customerController.addCustomer(name, phoneNumber, zipcode, adress,-1);
 	}
+	
+	public void createContractor() {
+		String name = writeString("Enter contractor name: ");
+		String phoneNumber = writeString("Enter contractor phone number: ");
+		String zipcode = writeString("Enter contractor zipcode: ");
+		String adress = writeString("Enter contractor adress: ");
+		int discount = writeInt("Enter contractor discount: ");
+		customerController.addCustomer(name, phoneNumber, zipcode, adress,discount);
+	}
+	
+	/**
 	
 	/**
 	 * Print all existing customers.
