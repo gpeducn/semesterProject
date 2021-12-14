@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import controller.CustomerController;
 import model.Customer;
 
+/**
+ * CustomerMenu - class that creates customer menu and
+ * let user take some actions related to customer.
+ * @author Gabriel Pêdlowski
+ */
 public class CustomerMenu {
 	
 	private CustomerController customerController;
@@ -75,7 +80,7 @@ public class CustomerMenu {
 		if(customers.size() > 0) {
 			for(int i = 0; i < customers.size(); i++) {
 				System.out.println("Customer [" + (i + 1) + "/" + customers.size() + "]:");
-				customers.get(i).getInfo(); 
+				customers.get(i).getInfo();
 			}
 		} else {
 			System.out.println("There are no customers.");
@@ -85,7 +90,7 @@ public class CustomerMenu {
 	/**
 	 * Update customer.
 	 */
-	private void updateCustomer() {
+	public void updateCustomer() {
 		try {
 			int id = findCustomer().getThisId();
 			updateCustomerById(id);
@@ -99,7 +104,7 @@ public class CustomerMenu {
 	 * @param id
 	 * @return true if customer updated successfully
 	 */
-	private boolean updateCustomerById(int id) {
+	public boolean updateCustomerById(int id) {
 		boolean retVal = false;
 		
 		if(checkIdValidity(id)) {
@@ -118,7 +123,7 @@ public class CustomerMenu {
 	/**
 	 * Delete customer.
 	 */
-	private void deleteCustomer() {
+	public void deleteCustomer() {
 		int id = findCustomer().getThisId();
 		deleteCustomerById(id);
 	}
@@ -128,7 +133,7 @@ public class CustomerMenu {
 	 * @param id
 	 * @return true if customer deleted successfully
 	 */
-	private boolean deleteCustomerById(int id) {
+	public boolean deleteCustomerById(int id) {
 		if(checkIdValidity(id)) {
 			if(confirm()) {
 				if(customerController.deleteCustomer(id)) { 
@@ -137,7 +142,6 @@ public class CustomerMenu {
 				}
 			} else {
 				System.out.println("Deletion was not succesful.");
-				
 			}
 		}
 		return false;
@@ -147,7 +151,7 @@ public class CustomerMenu {
 	 * Take customer ID from the user and find the customer.
 	 * @return customer with the given id
 	 */
-	private Customer findCustomer() {	
+	public Customer findCustomer() {	
 		int id = writeInt("Enter customer ID: ");
 		Customer customer = null;
 		if(checkIdValidity(id)) {
@@ -163,7 +167,7 @@ public class CustomerMenu {
 	 * Check if user is sure about the change e.g delete customer.
 	 * @return true if user choose "Yes"
 	 */
-	private boolean confirm() {
+	public boolean confirm() {
 		boolean retVal = false;
 		
 		TextOptions menu = new TextOptions("\n Are you sure?", "Back");
@@ -187,7 +191,7 @@ public class CustomerMenu {
 	 * @param id
 	 * @return true if customer updated successfully
 	 */
-	private boolean updateFields(int id) {
+	public boolean updateFields(int id) {
 		boolean retVal = false;
 		String name = writeString("Enter customer name: ");
 		String phoneNumber = writeString("Enter customer phone number: ");
@@ -217,7 +221,7 @@ public class CustomerMenu {
 	 * @param id
 	 * @return true if there is an customer with given id
 	 */
-	private boolean checkIdValidity(int id) {
+	public boolean checkIdValidity(int id) {
 		boolean retVal = false;
 		
 		if(customerController.findCustomer(id).getThisId() == id) { 
@@ -233,7 +237,7 @@ public class CustomerMenu {
 	 * @param text
 	 * @return input line
 	 */
-	private String writeString(String text) {
+	public String writeString(String text) {
 		String output = TextInput.inputString(text);
 		return output;
 	}
@@ -243,7 +247,7 @@ public class CustomerMenu {
 	 * @param number
 	 * @return input line
 	 */
-	private int writeInt(String number) {
+	public int writeInt(String number) {
 		int output = TextInput.inputNumber(number);
 		return output;
 	}

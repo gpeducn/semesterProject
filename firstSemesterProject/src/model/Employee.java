@@ -47,5 +47,6 @@ public class Employee {
 		System.out.println("ID: " + thisId);
 		System.out.println("Name: " + name);
 		System.out.println("Position: " + position);
+		System.out.println("");
 	}
 }

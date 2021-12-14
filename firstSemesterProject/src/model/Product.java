@@ -32,7 +32,14 @@ public class Product {
 	}
 
 	public void getInfo() {
-		System.out.println("Some info...");
+		System.out.println("Barcode: " + barcode);
+		System.out.println("Product name: " + productName);
+		System.out.println("Location: " + location);
+		System.out.println("Price: " + price);
+		System.out.println("Purchase price: " + purchasePrice);
+		System.out.println("Quantity: " + quantity);
+		System.out.println("Discount: " + discount);
+		System.out.println("");
 	}
 	
 	public String getProductName() {

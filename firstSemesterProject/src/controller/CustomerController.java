@@ -7,6 +7,10 @@ import model.CustomerContainer;
 
 import java.util.ArrayList;
 
+/**
+ * CustomerController - class 
+ * @author Gabriel Pêdlowski
+ */
 public class CustomerController {
 	
 	public boolean addCustomer(String name, String phoneNumber, String zipcode, String address) {

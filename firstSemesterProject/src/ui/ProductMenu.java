@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import controller.ProductController;
 import model.Product;
 
+/**
+ * ProductMenu - class that creates product menu and
+ * let user take some actions related to product.
+ * @author Gabriel Pêdlowski
+ */
 public class ProductMenu {
 
 	private ProductController productController;

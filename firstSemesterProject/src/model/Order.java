@@ -39,6 +39,7 @@ public class Order {
 		System.out.println("Delivery date: " + deliveryDate);
 		System.out.println("Status: "  + status);
 		System.out.println("Order date: " + orderDate);
+		System.out.println("");
 	}
 	
 	public void addProduct(Product product) {	
